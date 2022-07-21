@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { applyCardStyles } from "components/ReusableStyles";
 
+//the function will serve a purpose to display the data of the user's earnings being completed
 function Earnings() {
   const earningsData = [
     {

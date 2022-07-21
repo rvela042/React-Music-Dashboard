@@ -22,6 +22,7 @@ export default function Dashboard() {
   );
 }
 
+//this is for the earnings card displayed on the site
 const Section = styled.section`
   height: 100%;
   width: 100%;
