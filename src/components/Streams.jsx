@@ -9,13 +9,13 @@ import logo4 from "assets/logo4.png";
 export default function Streams() {
   const data = [
     {
-      data: 6780,
+      data: 3780,
     },
     {
-      data: 6680,
+      data: 4680,
     },
     {
-      data: 6500,
+      data: 5500,
     },
     {
       data: 6300,
@@ -24,7 +24,7 @@ export default function Streams() {
       data: 5900,
     },
     {
-      data: 5700,
+      data: 7000,
     },
     {
       data: 5500,
@@ -41,7 +41,9 @@ export default function Streams() {
     {
       data: 5300,
     },
-    { data: 4500 },
+    { 
+      data: 4500 
+    },
     {
       data: 5000,
     },
@@ -49,7 +51,7 @@ export default function Streams() {
       data: 4700,
     },
     {
-      data: 4400,
+      data: 2400,
     },
     {
       data: 4800,
@@ -106,7 +108,7 @@ export default function Streams() {
       data: 5800,
     },
     {
-      data: 6000,
+      data: 1000,
     },
     {
       data: 6300,
