@@ -1,6 +1,25 @@
 import styled from "styled-components";
+import ActiveListeners from "./ActiveListeners";
+import Avatar from "./Avatar";
+import Player from "./Player";
 export default function RightSidebar() {
-  return <Section></Section>;
+  return (
+    <Section id="rightSidebar">
+      <Avatar />
+      <ActiveListeners />
+      <Player />
+    </Section>
+  );
 }
 
-const Section = styled.section``;
+const Section = styled.section`
+  height: 100%;
+  width: 100%;
+  background-color: var(--dark-background-color);
+  padding: 0 3rem;
+  padding-top: 2rem;
+  @media screen and (min-width: 280px) and (max-width: 1080px) {
+    padding: 0 2rem;
+    padding-top: 2rem;
+  }
+`;

@@ -11,7 +11,7 @@ function Earnings() {
     },
     {
       progress: 55,
-      amount: 2731,
+      amount: 2331,
     },
     {
       progress: 65,
@@ -87,7 +87,7 @@ const Section = styled.section`
           font-weight: 100;
         }
       }
-      progress {
+      .progress {
         width: 100%;
         -webkit-appearance: none;
         appearance: none;
@@ -97,7 +97,7 @@ const Section = styled.section`
         }
         &::-webkit-progress-value {
           border-radius: 1rem;
-          background-color: orange;
+          background-color: #fe9b11; //tba
         }
       }
       .cleared {
