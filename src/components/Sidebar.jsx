@@ -95,6 +95,13 @@ const Aside = styled.section`
         }
     }
   }
-  
+  @media screen and (min-width: 280px) and (max-width: 1080px) {
+    width: 100%;
+    padding: 1rem;
+    .links,
+    .help {
+      display: none;
+    }
+  }
 
 `;
