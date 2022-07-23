@@ -10,18 +10,18 @@ import kingdom from "assets/kingdom.png";
 export default function ActiveListeners() {
   const countries = [
     {
+      name: "United States",
+      amount: 87,
+      image: united,
+    },
+    {
       name: "India",
       amount: 64,
       image: india,
     },
     {
-      name: "United States",
-      amount: 24,
-      image: united,
-    },
-    {
       name: "United Kingdom",
-      amount: 13,
+      amount: 23,
       image: kingdom,
     },
     {
@@ -31,12 +31,32 @@ export default function ActiveListeners() {
     },
     {
       name: "France",
-      amount: 64,
+      amount: 34,
       image: france,
     },
     {
       name: "United States",
-      amount: 24,
+      amount: 44,
+      image: united,
+    },
+    {
+      name: "United Kingdom",
+      amount: 23,
+      image: kingdom,
+    },
+    {
+      name: "Canada",
+      amount: 10,
+      image: canada,
+    },
+    {
+      name: "India",
+      amount: 14,
+      image: india,
+    },
+    {
+      name: "United States",
+      amount: 56,
       image: united,
     },
     {
@@ -51,7 +71,7 @@ export default function ActiveListeners() {
     },
     {
       name: "India",
-      amount: 64,
+      amount: 41,
       image: india,
     },
     {
@@ -71,32 +91,12 @@ export default function ActiveListeners() {
     },
     {
       name: "India",
-      amount: 64,
+      amount: 16,
       image: india,
     },
     {
       name: "United States",
-      amount: 24,
-      image: united,
-    },
-    {
-      name: "United Kingdom",
-      amount: 13,
-      image: kingdom,
-    },
-    {
-      name: "Canada",
-      amount: 10,
-      image: canada,
-    },
-    {
-      name: "India",
-      amount: 64,
-      image: india,
-    },
-    {
-      name: "United States",
-      amount: 24,
+      amount: 7,
       image: united,
     },
     {
@@ -121,32 +121,32 @@ export default function ActiveListeners() {
     },
     {
       name: "India",
-      amount: 64,
+      amount: 57,
       image: india,
     },
     {
       name: "United States",
-      amount: 24,
+      amount: 48,
       image: united,
     },
     {
       name: "United Kingdom",
-      amount: 13,
+      amount: 73,
       image: kingdom,
     },
     {
       name: "Canada",
-      amount: 10,
+      amount: 60,
       image: canada,
     },
     {
       name: "Australia",
-      amount: 4,
+      amount: 40,
       image: austallia,
     },
     {
       name: "France",
-      amount: 22,
+      amount: 8,
       image: france,
     },
   ];
@@ -239,7 +239,119 @@ export default function ActiveListeners() {
       data: 7700,
     },
   ];
-  return <Section></Section>;
+  return <Section>
+    <div className="title-container">
+      <div className="title">
+        <h4>Listening Now</h4>
+        <h1>4,578</h1>
+      </div>
+      <div className="chart">
+        <div className="percent">+ 12.3%</div>
+        <ResponsiveContainer width="100%" height="100%">
+          <AreaChart
+            //  width={500} height={400}
+            data={data}
+          >
+            <defs>
+              <linearGradient id="colorview" x1="0" y1="0" x2="0" y2="1">
+                <stop
+                  offset="10%"
+                  stopColor="var(--primary-color)"
+                  stopOpacity={0.4}
+                />
+                <stop offset="100%" stopColor="#000000ff" stopOpacity={0.2} />
+              </linearGradient>
+            </defs>
+            <Area
+              type="monotone"
+              dataKey="data"
+              stroke="var(--primary-color)"
+              strokeWidth={2}
+              fill="url(#colorview)"
+              animationBegin={800}
+              animationDuration={2000}
+            />
+          </AreaChart>
+        </ResponsiveContainer>
+      </div>
+    </div>
+    <div className="active">
+      {countries.map((data, index) => {
+        return (<div className="country" key = {index}>
+          <div className="name">
+            <img src={data.image} alt="data.name" />
+            <h5>{data.name}</h5>
+          </div>
+          <h5>{data.amount}%</h5>
+          </div>
+        );
+      })}
+    </div>
+  </Section>;
 }
 
-const Section = styled.section``;
+const Section = styled.section`
+  border-bottom: 0.1rem solid #242424;
+  color: white;
+  .title-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    padding-top: 1rem;
+    .title {
+      h4 {
+        font-size: 0.8rem;
+        margin-bottom: 0.2rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+        letter-spacing: 0.2rem;
+      }
+    }
+    .chart {
+      position: relative;
+      .percent {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: var(--primary-color);
+        font-size: 0.8rem;
+      }
+      height: 4rem;
+      width: 100%;
+    }
+  }
+  .active {
+    max-height: 11rem;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-right: 1.5rem;
+    margin: 1rem 0;
+    ::-webkit-scrollbar {
+      width: 0.2rem;
+      background-color: #6e6e6ec3;
+      &-thumb {
+        background-color: #b8b8b8;
+      }
+    }
+    h5 {
+      font-weight: 100;
+    }
+    .country {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .name {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        img {
+          height: 2rem;
+          border-radius: 2rem;
+        }
+      }
+    }
+  }
+`;
