@@ -44,4 +44,5 @@ const Section = styled.section`
       gap: 1rem;
     }
   }
+  
 `;
