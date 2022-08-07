@@ -16,7 +16,7 @@ In the project directory, you can run:
 
 ```yarn create react-app my-app``` - this enabled the creation of the React application using Yarn.
 
-```yarn starrt``` - Runs the app in development mode. Open http://localhost:3000 to view it in the browser.
+```yarn start``` - Runs the app in development mode. Open http://localhost:3000 to view it in the browser.
 
 The page will automatically reload if you make changes to the code. You will see the build errors and lint warnings in the console.
 
